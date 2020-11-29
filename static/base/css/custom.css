@@ -1,0 +1,69 @@
+.tab_menu ul li a {
+	color: #1f1f1f;
+	text-decoration: none !important;
+	outline: none !important;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    cursor: pointer !important;
+    text-align: center;
+    display: block;
+} 
+.tab_menu ul li a:hover {
+    color: #095a83 !important;
+    text-decoration: none !important;
+    outline: none !important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    cursor: pointer !important;
+    text-align: center;
+    /* font-weight: bold; */
+}
+
+.tab_menu ul li:hover a {
+    color: #ffffff !important; 
+}
+
+.card-title{
+	padding-bottom: 0px;
+}
+
+#loading-modal div span.fa-cog{
+    color: #ffffff;
+  }
+
+div.note-insert{
+	display:none !important;
+}
+
+a.btn{
+	color: #ffffff !important;
+}
+
+.table.dataTable{
+	margin-top:0px !important;
+}
+
+.inner_page header nav div.container-fluid{
+    background-color: #095a83;
+}
+
+.inner_page header nav div.container-fluid div ul.navbar-nav li a{
+    color: #ffffff;
+}
+
+
+.inner_page header nav div.container-fluid div ul.navbar-nav li a:hover,
+.inner_page header nav div.container-fluid div ul.navbar-nav li.active a{ 
+    color: #095a83;
+}
+
+.inner_page header nav div.container-fluid div ul.navbar-nav li:hover,
+.inner_page header nav div.container-fluid div ul.navbar-nav li.active{ 
+    background-color: #ffffff;
+}
