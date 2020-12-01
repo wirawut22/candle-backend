@@ -161,12 +161,7 @@ export default {
       }
     }
     ,
-    vendor: ['vue2-google-maps'], 
-    devMiddleware: {
-      headers: {
-        'Cache-Control': 'no-store',
-        Vary: '*'
-      }
-    }
+    vendor: ['vue2-google-maps'],
+    publicPath: '/dist/',
   }
 }
