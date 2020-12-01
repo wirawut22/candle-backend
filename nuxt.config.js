@@ -110,6 +110,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
     ['@nuxtjs/pwa', { meta: false, icon: false, manifest: false }],
     ['nuxt-responsive-loader'],
     // ['nuxt-gmaps', { 
@@ -117,11 +118,29 @@ export default {
     //   libraries: ['places,directions']
     // }]
   ],
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: 'login', method: 'post', propertyName: 'data.token' },
+          user: { url: 'me', method: 'get', propertyName: 'data.user' },
+          logout: false
+        }
+      }
+    },
+    redirect: {
+      login: '/login'
+    }
+  },
+  router: {
+    //middleware: ['auth']
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: 'http://localhost:5000/api/authen'
   },
   responsiveLoader: {
     adapter: require('responsive-loader/sharp'),

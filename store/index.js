@@ -147,7 +147,7 @@ const createStore=()=>{
             },
             async initNews(vuexContext){   
                 return axios
-                .get("https://service.candlesfest.com/api/api/news/find/all")
+                .get("https://service.candlesfest.com/api/news/find/all")
                 .then(res=>{    
                     vuexContext.commit("setNewsState", res.data.news_list);
                 }).catch(e=>context.error(e));
@@ -174,7 +174,7 @@ const createStore=()=>{
                 }  
 
                 createNews.image = fullPathStr; 
-                return await axios.post("https://service.candlesfest.com/api/api/news/create", 
+                return await axios.post("https://service.candlesfest.com/api/news/create", 
                 formData, headers
                 ).then(res=>{   
                     //setTimeout(() => {
@@ -227,7 +227,7 @@ const createStore=()=>{
                 } 
 
                 formData.append('newImage', editNews.image); 
-                return await axios.put("https://service.candlesfest.com/api/api/news/update/"+editNews.id, 
+                return await axios.put("https://service.candlesfest.com/api/news/update/"+editNews.id, 
                 formData, headers
                 ).then(res=>{ 
                     //setTimeout(() => {
@@ -251,7 +251,7 @@ const createStore=()=>{
             },
             async deleteNews(vuexContext,id){
                 console.log("03");
-                return await axios.delete("https://service.candlesfest.com/api/api/news/delete/"+id
+                return await axios.delete("https://service.candlesfest.com/api/news/delete/"+id
                 ).then(res=>{
                     console.log("04");
                     //setTimeout(() => {   
@@ -275,7 +275,7 @@ const createStore=()=>{
             }, 
             async initZone(vuexContext){ 
                 return axios
-                .get("https://service.candlesfest.com/api/api/zone/find/all/active") 
+                .get("https://service.candlesfest.com/api/zone/find/all/active") 
                 .then(res=>{  
                     vuexContext.commit("setZoneState", res.data.zone_list);
                 }).catch(e=>context.error(e));
@@ -284,7 +284,7 @@ const createStore=()=>{
                 //รับค่าที่ส่งมาจากการใช้คำสั่ง dispatch  
                 const createZone={...zone} 
                 var fullPathStr = "";//อาจจะเก็บเป็น filename หรือ fullpath จริงๆ   
-                return await axios.post("https://service.candlesfest.com/api/api/zone/create", 
+                return await axios.post("https://service.candlesfest.com/api/zone/create", 
                 createZone
                 ).then(res=>{  
                     //setTimeout(() => { 
@@ -309,7 +309,7 @@ const createStore=()=>{
             async editZone(vuexContext,zone){
                 //รับค่าที่ส่งมาจากการใช้คำสั่ง dispatch  
                 const editZone={...zone}     
-                return await axios.put("https://service.candlesfest.com/api/api/zone/update/"+editZone.id, 
+                return await axios.put("https://service.candlesfest.com/api/zone/update/"+editZone.id, 
                 editZone
                 ).then(res=>{ 
                     //setTimeout(() => {
@@ -332,7 +332,7 @@ const createStore=()=>{
                 });
             },
             async deleteZone(vuexContext,id){  
-                return await axios.delete("https://service.candlesfest.com/api/api/zone/delete/"+id
+                return await axios.delete("https://service.candlesfest.com/api/zone/delete/"+id
                 ).then(res=>{
                     //setTimeout(() => {   
                         console.log("id = "+res.data.id);
@@ -354,7 +354,7 @@ const createStore=()=>{
             },
             async initPlaceGroup(vuexContext){ 
                 return axios
-                .get("https://service.candlesfest.com/api/api/placeGroup/find/all")
+                .get("https://service.candlesfest.com/api/placeGroup/find/all")
                 .then(res=>{  
                     vuexContext.commit("setPlaceGroupState", res.data.place_group_list);
                 }).catch(e=>context.error(e));
@@ -363,7 +363,7 @@ const createStore=()=>{
                 //รับค่าที่ส่งมาจากการใช้คำสั่ง dispatch  
                 const createPlaceGroup={...placeGroup} 
                 var fullPathStr = "";//อาจจะเก็บเป็น filename หรือ fullpath จริงๆ   
-                return await axios.post("https://service.candlesfest.com/api/api/placeGroup/create", 
+                return await axios.post("https://service.candlesfest.com/api/placeGroup/create", 
                 createPlaceGroup
                 ).then(res=>{  
                     //setTimeout(() => { 
@@ -388,7 +388,7 @@ const createStore=()=>{
             async editPlaceGroup(vuexContext,placeGroup){ 
                 //รับค่าที่ส่งมาจากการใช้คำสั่ง dispatch  
                 const editPlaceGroup={...placeGroup}     
-                return await axios.put("https://service.candlesfest.com/api/api/placeGroup/update/"+editPlaceGroup.id, 
+                return await axios.put("https://service.candlesfest.com/api/placeGroup/update/"+editPlaceGroup.id, 
                 editPlaceGroup
                 ).then(res=>{ 
                     //setTimeout(() => {
@@ -411,7 +411,7 @@ const createStore=()=>{
                 });
             },
             async deletePlaceGroup(vuexContext,id){ 
-                return await axios.delete("https://service.candlesfest.com/api/api/placeGroup/delete/"+id
+                return await axios.delete("https://service.candlesfest.com/api/placeGroup/delete/"+id
                 ).then(res=>{
                     //setTimeout(() => {   
                         console.log("id = "+res.data.id);
@@ -433,14 +433,14 @@ const createStore=()=>{
             },
             async initPlace(vuexContext){    
                 return axios
-                .get("https://service.candlesfest.com/api/api/place/find/all")
+                .get("https://service.candlesfest.com/api/place/find/all")
                 .then(res=>{    
                     vuexContext.commit("setPlaceState", res.data.place_list);
                 }).catch(e=>context.error(e));
             },
             async initPlaceOrder(vuexContext){   
                 return axios
-                .get("https://service.candlesfest.com/api/api/place/find/all/13.744950999999999/100.5622064")
+                .get("https://service.candlesfest.com/api/place/find/all/13.744950999999999/100.5622064")
                 .then(res=>{    
                     vuexContext.commit("setPlaceOrderState", res.data.place_list);
                 }).catch(e=>context.error(e));
@@ -471,7 +471,7 @@ const createStore=()=>{
                 }  
 
                 createPlace.image = fullPathStr; 
-                return await axios.post("https://service.candlesfest.com/api/api/place/create", 
+                return await axios.post("https://service.candlesfest.com/api/place/create", 
                 formData, headers
                 ).then(res=>{  
                     //setTimeout(() => {
@@ -529,7 +529,7 @@ const createStore=()=>{
                 } 
                 formData.append('newImage', editPlace.image);
                     
-                return await axios.put("https://service.candlesfest.com/api/api/place/update/"+editPlace.id, 
+                return await axios.put("https://service.candlesfest.com/api/place/update/"+editPlace.id, 
                 formData, headers
                 ).then(res=>{ 
                     //setTimeout(() => {
@@ -552,7 +552,7 @@ const createStore=()=>{
                 });
             },
             async deletePlace(vuexContext,id){
-                return await axios.delete("https://service.candlesfest.com/api/api/place/delete/"+id
+                return await axios.delete("https://service.candlesfest.com/api/place/delete/"+id
                 ).then(res=>{
                     //setTimeout(() => {   
                         console.log("id = "+res.data.id);
@@ -574,7 +574,7 @@ const createStore=()=>{
             },
             async initReserve(vuexContext){ 
                 return axios
-                .get("https://service.candlesfest.com/api/api/reserve/find/all")
+                .get("https://service.candlesfest.com/api/reserve/find/all")
                 .then(res=>{   
                     vuexContext.commit("setReserveState", res.data.reserve_list);
                 }).catch(e=>context.error(e));
@@ -584,7 +584,7 @@ const createStore=()=>{
                 debugger;
                 const createReserve={...reserve} 
                 var fullPathStr = "";//อาจจะเก็บเป็น filename หรือ fullpath จริงๆ   
-                return await axios.post("https://service.candlesfest.com/api/api/reserve/create", 
+                return await axios.post("https://service.candlesfest.com/api/reserve/create", 
                 createReserve
                 ).then(res=>{  
                     //setTimeout(() => { 
@@ -610,7 +610,7 @@ const createStore=()=>{
             },
             async checkReserve(vuexContext, mobile){
                 return axios
-                .get("https://service.candlesfest.com/api/api/zone/find/reserve/"+mobile)
+                .get("https://service.candlesfest.com/api/zone/find/reserve/"+mobile)
                 .then(res=>{
                     debugger;
                     var reserve_list = res.data.reserve_list;
@@ -621,7 +621,7 @@ const createStore=()=>{
             async editReserve(vuexContext,reserve){ 
                 //รับค่าที่ส่งมาจากการใช้คำสั่ง dispatch  
                 const editReserve={...reserve}     
-                return await axios.put("https://service.candlesfest.com/api/api/reserve/update/"+editReserve.id, 
+                return await axios.put("https://service.candlesfest.com/api/reserve/update/"+editReserve.id, 
                 editReserve
                 ).then(res=>{ 
                     //setTimeout(() => {
@@ -644,7 +644,7 @@ const createStore=()=>{
                 });
             },
             async deleteReserve(vuexContext,id){ 
-                return await axios.delete("https://service.candlesfest.com/api/api/reserve/delete/"+id
+                return await axios.delete("https://service.candlesfest.com/api/reserve/delete/"+id
                 ).then(res=>{
                     //setTimeout(() => {    
                         console.log("id = "+res.data.id);

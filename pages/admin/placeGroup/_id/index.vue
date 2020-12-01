@@ -48,7 +48,7 @@ export default {
         PlaceGroupForm
     },
     asyncData(context){ 
-        return axios.get("https://service.candlesfest.com/api/api/placeGroup/find/id/"+context.params.id)
+        return axios.get("https://service.candlesfest.com/api/placeGroup/find/id/"+context.params.id)
             .then(res=>{ 
                 return {
                     placeGroupPost:{

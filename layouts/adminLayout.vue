@@ -17,6 +17,7 @@ import NavBar from '../components/pages/layout/NavBar'
 import SideBar from '../components/pages/layout/SideBar'
 import Footer from '../components/pages/layout/Footer' 
 export default { 
+  middleware: 'auth',
   components: {
     NavBar, SideBar, Footer
   },

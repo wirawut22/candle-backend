@@ -721,7 +721,7 @@ export default {
 
   },
   asyncData(context) {
-    // return axios.get("https://service.candlesfest.com/api/api/place/find/group_id/"+context.params.id+"/13.744950999999999/100.5622064")
+    // return axios.get("https://service.candlesfest.com/api/place/find/group_id/"+context.params.id+"/13.744950999999999/100.5622064")
     // .then(res=>{
     //     return {
     //         placeList:res.data.place_list

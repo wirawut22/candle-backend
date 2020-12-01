@@ -49,7 +49,7 @@ export default {
     },
     asyncData(context){ 
       debugger; 
-        return axios.get("https://service.candlesfest.com/api/api/place/find/id/"+context.params.id)
+        return axios.get("https://service.candlesfest.com/api/place/find/id/"+context.params.id)
             .then(res=>{ 
               debugger;
                 return { 

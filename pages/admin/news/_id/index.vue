@@ -48,7 +48,7 @@ export default {
         NewsForm
     },
     asyncData(context){ 
-        return axios.get("https://service.candlesfest.com/api/api/news/find/id/"+context.params.id)
+        return axios.get("https://service.candlesfest.com/api/news/find/id/"+context.params.id)
             .then(res=>{
                 return {
                     newsPost:{

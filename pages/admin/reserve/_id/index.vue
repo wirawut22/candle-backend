@@ -48,7 +48,7 @@ export default {
         ReserveForm
     },
     asyncData(context){ 
-        return axios.get("https://service.candlesfest.com/api/api/reserve/find/id/"+context.params.id)
+        return axios.get("https://service.candlesfest.com/api/reserve/find/id/"+context.params.id)
             .then(res=>{
                 return {
                     reservePost:{

@@ -13,7 +13,7 @@ export default {
         PlacePost
     },
     asyncData(context){
-        return axios.get("https://service.candlesfest.com/api/api/place/find/id/"+context.params.id+"/"+"13.744950999999999/100.5622064")
+        return axios.get("https://service.candlesfest.com/api/place/find/id/"+context.params.id+"/"+"13.744950999999999/100.5622064")
         .then(res=>{  
             return {
                 placePost:res.data.place 

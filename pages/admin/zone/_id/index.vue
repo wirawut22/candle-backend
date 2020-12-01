@@ -48,8 +48,8 @@ export default {
         ZoneForm
     },
     asyncData(context){ 
-        return axios.get("https://service.candlesfest.com/api/api/zone/find/id/"+context.params.id)
-        //return axios.get("https://service.candlesfest.com/api/api/zone/find/id/"+context.params.id)
+        return axios.get("https://service.candlesfest.com/api/zone/find/id/"+context.params.id)
+        //return axios.get("https://service.candlesfest.com/api/zone/find/id/"+context.params.id)
             .then(res=>{ 
                 return {
                     zonePost:{
