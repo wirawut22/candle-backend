@@ -31,7 +31,7 @@
                                         </div>
                                         <div class="col-12 product-image-thumbs"  >
                                             <div v-for="item in newsPost.image" :key="item" v-bind:index="index" class="product-image-thumb" v-on:click="setActiveImage(item)">
-                                                <img sizes="(min-width: 768px) 60vw, 95vw" :data-src="item" :data-srcset="item" class="img-responsive lazyload" @error="$event.target.src='/base/images/lazy.jpg'">
+                                                <img :data-src="item" :data-srcset="item" class="img-responsive lazyload" @error="$event.target.src='/base/images/lazy.jpg'">
                                             </div> 
                                         </div>   
                                 </div> 

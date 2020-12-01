@@ -86,7 +86,7 @@ export default {
     async login(e) { 
       e.preventDefault();
 
-      $('#loading-modal').modal('show');  
+      //$('#loading-modal').modal('show');  
       
       const payload = {
         username: this.username,
@@ -96,11 +96,11 @@ export default {
         await this.$auth.loginWith('local', {
           data: payload
         });
-        $('#loading-modal').modal('hide') 
+        //$('#loading-modal').modal('hide') 
         this.message = 'valid';
         this.$router.push('/admin/news'); 
       } catch (e) { 
-        $('#loading-modal').modal('hide')
+        //$('#loading-modal').modal('hide')
         this.message = 'invalid';
         //this.$router.push('/login');
       }

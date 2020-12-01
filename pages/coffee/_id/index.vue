@@ -27,7 +27,7 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="full float-right_img mt-4">
-                                            <img sizes="(min-width: 768px) 60vw, 95vw" class="img-responsive lazyload" :data-src="item.image[0]" :data-srcset="item.image[0].srcSet" @error="$event.target.src='/base/images/lazy.jpg'">
+                                            <img class="img-responsive lazyload" :data-src="item.image[0]" :data-srcset="item.image[0].srcSet" @error="$event.target.src='/base/images/lazy.jpg'">
                                         </div>
                                     </div>
                                     <div class="col-md-8 layout_padding_3"> 

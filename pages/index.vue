@@ -23,7 +23,7 @@
             <div class="row">
               <div class="col-md-6 mt-2 mb-2">
                 <div class="full float-right_img mt-4">
-                   <img sizes="(min-width: 768px) 60vw, 95vw" class="img-responsive lazyload" :data-src="item.image[0]" :data-srcset="item.image[0].srcSet" @error="$event.target.src='/base/images/lazy.jpg'">
+                   <img class="img-responsive lazyload" :data-src="item.image[0]" :data-srcset="item.image[0].srcSet" @error="$event.target.src='/base/images/lazy.jpg'">
                 </div>
               </div>
               <div class="col-md-6 mt-2 mb-2 layout_padding_2">
@@ -72,7 +72,7 @@
               </div>
               <div class="col-md-6 mt-2 mb-2">
                 <div class="full">
-                   <img sizes="(min-width: 768px) 60vw, 95vw" class="img-responsive lazyload" :data-src="item.image[0]" :data-srcset="item.image[0].srcSet" @error="$event.target.src='/base/images/lazy.jpg'" > 
+                   <img class="img-responsive lazyload" :data-src="item.image[0]" :data-srcset="item.image[0].srcSet" @error="$event.target.src='/base/images/lazy.jpg'" > 
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@
           >
             <div class="full blog_img_popular mb-5" v-if="index < 12">
               <!--เเสดงไม่เกิน 12 รายการ--> 
-              <img id="place-advice" sizes="(min-width: 768px) 60vw, 95vw" class="img-responsive lazyload" :data-src="item.image[0]" :data-srcset="item.image[0].srcSet" @error="$event.target.src='/base/images/lazy.jpg'">
+              <img id="place-advice" class="img-responsive lazyload" :data-src="item.image[0]" :data-srcset="item.image[0].srcSet" @error="$event.target.src='/base/images/lazy.jpg'">
               <h4><nuxt-link :to="`/place/${item.id}`">{{ item.topic.length > 30 ? item.topic.slice(0, 30) + "..." : item.topic }}</nuxt-link></h4>
               <p style="text-align: left"><i class="fas fa-at" title="ที่อยู่"></i> {{ item.address }}</p>
               <p style="text-align: left">
