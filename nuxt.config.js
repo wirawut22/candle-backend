@@ -143,7 +143,7 @@ export default {
     baseURL: 'https://service.candlesfest.com/api/authen'
   },
   responsiveLoader: {
-    adapter: require('responsive-loader/sharp'),
+   // adapter: require('responsive-loader/sharp'),
     name: 'images/[name]-[width].[ext]', // use [name] to keep the original filename
     sizes: [320, 640, 768, 960, 1024, 1280, 1600, 1920], // array of image sizes - adjust to your layout needs
     quality: 85 // 85 is default. Tweak this if you need to
