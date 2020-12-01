@@ -33,7 +33,7 @@
                                             <h4>{{ item.topic }}</h4>
                                         </div>
                                         <div class="full blog_img_popular mb-2">  
-                                            <p style="text-align: left"><i class="fas fa-at" title="ที่อยู่"></i> {{ item.address }}|{{item.latitude}}|{{item.longtitude}}</p>
+                                            <p style="text-align: left"><i class="fas fa-at" title="ที่อยู่"></i> {{ item.address }}</p>
                                             <p style="text-align: left">
                                                 <i class="fas fa-map-marker-alt" title="ระยะทาง"></i> {{ item.distance }} {{ item.distance_unit }}
                                             </p>

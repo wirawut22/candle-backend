@@ -14,13 +14,12 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
           <i class="far fa-user"></i> {{user?user.name:""}}
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
           <a href="#" class="dropdown-item">
-            <!-- Message Start -->
             <div class="media"> 
               <div class="media-body">
                 <h3 class="dropdown-item-title">
@@ -29,12 +28,11 @@
                 </h3>
                 <p class="text-sm">อีเมล์ : {{user?user.email:""}}</p> 
               </div>
-            </div>
-            <!-- Message End -->
+            </div> 
           </a> 
           <div class="dropdown-divider"></div> 
         </div>
-      </li> 
+      </li>  -->
       <li class="nav-item"> 
         <a class="nav-link" @click="logout"> 
           <i class="fas fa-sign-out-alt" title="ออกจากระบบ"/>

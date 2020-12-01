@@ -1,9 +1,15 @@
 <template>
   <div class="hold-transition login-page"> 
+    <div id="loading-login-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered justify-content-center" role="document">
+            <span class="fas fa-cog fa-spin fa-3x"></span>
+        </div>
+    </div> 
+
     <div class="login-box">
-      <div class="login-logo">
-        <a href="../../index2.html"><b>ผู้ดูเเลระบบ</b></a>
-      </div>
+      <!-- <div class="login-logo">
+        <b>ผู้ดูเเลระบบ</b>
+      </div> -->
       <!-- /.login-logo -->
       <div class="card">
         <div class="card-body login-card-body">
@@ -11,7 +17,7 @@
 
           <form @submit="login"> 
             <div class="input-group mb-3">
-              <label v-if="!this.$auth.loggedIn && initial" class="col-form-label" style="color:red;" for="inputError"><i class="far fa-times-circle"></i> ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง</label>
+              <label v-if="message=='invalid'" class="col-form-label" style="color:red;" for="inputError"><i class="far fa-times-circle"></i> ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง</label>
             </div>
             <div class="input-group mb-3">
               <input type="text" v-model="username" class="form-control" placeholder="ชื่อผู้ใช้งาน" />
@@ -30,16 +36,16 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-8">
+              <div class="col-7">
                 <div class="icheck-primary">
                   <input type="checkbox" id="remember" />
                   <label for="remember"> จดจำรหัสผ่าน </label>
                 </div>
               </div>
               <!-- /.col -->
-              <div class="col-4">
-                <button type="submit" class="btn btn-primary btn-block">
-                  เข้าสู่ระบบ
+              <div class="col-5">
+                <button type="submit" class="btn btn-info btn-block">
+                  <i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ
                 </button>
               </div>
               <!-- /.col -->
@@ -58,23 +64,30 @@
   </div>
 </template>
 
+<style scoped>
+  #loading-login-modal .fa, #loading-login-modal .fas { 
+    color: #ffffff;
+  }
+</style>
+
 
 <script>
 export default {
-  data() {
+  layout: "coreLayout",
+  data() {  
     debugger;
-    const parameters = this.$route.query;
     return {
-      err_message:parameters?parameters.error_message:"",
+      message:"",
       username: '',
-      password: '',
-      initial:false
+      password: '' 
     };
-  },
+  }, 
   methods: {
     async login(e) { 
       e.preventDefault();
-      this.initial = true;
+
+      $('#loading-modal').modal('show');  
+      
       const payload = {
         username: this.username,
         password: this.password
@@ -83,9 +96,13 @@ export default {
         await this.$auth.loginWith('local', {
           data: payload
         });
-        this.$router.push('/admin/news');
+        $('#loading-modal').modal('hide') 
+        this.message = 'valid';
+        this.$router.push('/admin/news'); 
       } catch (e) { 
-        this.$router.push('/login');
+        $('#loading-modal').modal('hide')
+        this.message = 'invalid';
+        //this.$router.push('/login');
       }
     }
   }
