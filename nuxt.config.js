@@ -140,7 +140,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'http://localhost:5000/api/authen'
+    baseURL: 'https://service.candlesfest.com/api/authen'
   },
   responsiveLoader: {
     adapter: require('responsive-loader/sharp'),
