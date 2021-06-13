@@ -17,3 +17,9 @@ const nuxt = new Nuxt(config);
 
 // Add nuxt middleware
 app.use(nuxt.render);
+
+// Build on start
+new Builder(nuxt).build().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
